@@ -12,7 +12,7 @@
 <body>
 <h1>Default test</h1>
 <p>
-  Test duration: 27.441s
+  Test duration: 113.405s
 </p>
 
 
@@ -20,27 +20,27 @@
   <table class="resultsTable">
     <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">com.webtest.testCases.TollsTest</td>
+        <td colspan="3" class="group">com.webtest.testCases.RentalRoom</td>
       </tr>
             
 <tr>
   <td class="method">
-                  checkResult
+                  IWantTest
       </td>
   <td class="duration">
-    10.483s
+    11.222s
   </td>
   <td class="result">
         
     
         
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.InvalidArgumentException: Expected &quot;handle&quot; to be a string, got [object Undefined] undefined<br/>
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.ElementClickInterceptedException: Element &lt;a href=&quot;/home.php/rent&quot;&gt; is not clickable at point (422,152) because another element &lt;div id=&quot;myModal&quot; class=&quot;modal fade in&quot;&gt; obscures it<br/>
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;<br/>
 System info: host: &apos;LAPTOP-9NVS2R9C&apos;, ip: &apos;192.168.137.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_212&apos;<br/>
 Driver info: org.openqa.selenium.firefox.FirefoxDriver<br/>
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 81.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20201012085804, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 19356, moz:profile: C:\Users\yu\AppData\Local\T..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}<br/>
-Session ID: 9bd0e8b8-a097-4d11-bcb4-db03791aff28</b></a><br />
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 81.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20201012085804, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 16256, moz:profile: C:\Users\yu\AppData\Local\T..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}<br/>
+Session ID: be1f6a63-efda-4596-97e3-b254146abc71</b></a><br />
     <div class="stackTrace" id="exception-0">
               sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
               sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)<br />
@@ -52,9 +52,10 @@ Session ID: 9bd0e8b8-a097-4d11-bcb4-db03791aff28</b></a><br />
               org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)<br />
               org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
               org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)<br />
-              org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.window(RemoteWebDriver.java:903)<br />
-              com.webtest.core.WebDriverEngine.switchWidow(WebDriverEngine.java:280)<br />
-              com.webtest.testCases.TollsTest.checkResult(TollsTest.java:56)<br />
+              org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)<br />
+              org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)<br />
+              com.webtest.core.WebDriverEngine.click(WebDriverEngine.java:152)<br />
+              com.webtest.testCases.RentalRoom.IWantTest(RentalRoom.java:193)<br />
               sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
               sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
               sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
@@ -89,6 +90,111 @@ Session ID: 9bd0e8b8-a097-4d11-bcb4-db03791aff28</b></a><br />
       </table>
 
 
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">com.webtest.testCases.RentalRoom</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  PhotoAlbumPageJump
+      </td>
+  <td class="duration">
+    15.965s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  changeSortByPrice
+      </td>
+  <td class="duration">
+    6.613s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  changeSortByPriceafterChangePage
+      </td>
+  <td class="duration">
+    4.506s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  chooseCatalog
+      </td>
+  <td class="duration">
+    21.313s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  clickByTitle
+      </td>
+  <td class="duration">
+    3.393s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  pageJump
+      </td>
+  <td class="duration">
+    10.687s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  search1
+      </td>
+  <td class="duration">
+    21.503s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+      </table>
   
 </body>
 </html>

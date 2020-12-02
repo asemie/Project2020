@@ -313,5 +313,12 @@ public class WebDriverEngine {
 		WebElement img = finder.findElementByPrefix(locator);
 		return	img.getAttribute("src");	
 	}	
-	
+	public void clickWithoutSleep(String locator) {
+
+		WebElement element = finder.findElement(locator);
+		if (element != null) {
+			element.click();
+			System.out.println("click success");
+		}
+	}
 }

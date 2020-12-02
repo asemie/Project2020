@@ -17,43 +17,43 @@ import com.webtest.utils.ReadProperties;
 
 public class PhotoAlbumTest extends BaseTest{
 	//No.1
-//	@Test
-//	public void searchByColumn() {
-//		webtest.selectByIndex("xpath=//select[@name='stype']",1);
-//		webtest.click("xpath=//input[@value='搜索']");
-//		
-//		for(int i=2;i<22;i++) {
-//			String xPath = "xpath=//*[@id=\"fmlist\"]/div/table/tbody/tr["+i+"]/td[3]";
-//			assertEquals("户型图", webtest.getText(xPath));
-//		}
-//	}
+	@Test(priority = 1)
+	public void searchByColumn() {
+		webtest.selectByIndex("xpath=//select[@name='stype']",1);
+		webtest.click("xpath=//input[@value='搜索']");
+		List<WebElement> items = webtest.findElements("tag=tr");
+		for(int i=2;i<items.size()-1;i++) {
+			String xPath = "xpath=/html/body/form[2]/div/table/tbody/tr["+i+"]/td[3]";
+			assertEquals("户型图", webtest.getText(xPath));
+		}
+	}
 	
 	//No.2
-//	@Test
-//	public void searchByTitle() throws InterruptedException {
-//		webtest.selectByVisibleText("xpath=//select[@name='stype']","-栏目-");
-//		webtest.type("xpath=//*[@id=\"fmid\"]/table/tbody/tr/td/input[1]", "效果图");
-//		webtest.click("xpath=//input[@value='搜索']");
-//		String now = webtest.getValue("xpath=//*[@id=\"pg_pjump\"]");
-//		int nowPage = Integer.parseInt(now);
-//		String con = webtest.getText("xpath=/html/body/form[2]/div/table/tbody/tr[22]/td[2]/div[2]/ul/li[7]/a");
-//		int count = Integer.parseInt(con);
-//		int thcount = count/20+1;
-//		List<WebElement> items = webtest.findElements("tag=tr");
-//		for(int i=1;i<=count+thcount;i++) {
-//			int t = i%21+1;
-//			String xpath = "xpath=/html/body/form[2]/div/table/tbody/tr["+t+"]/td[2]/a";
-//			assertEquals(webtest.getText(xpath), "效果图");
-//			if(t==items.size()-2) {
-//			webtest.click("xpath=//*[@id=\"fmlist\"]/div/table/tbody/tr[22]/td[2]/div[2]/ul/li[5]/a");
-//			Thread.sleep(1000);
-//			items = webtest.findElements("tag=tr");
-//			now = webtest.getValue("xpath=//*[@id=\"pg_pjump\"]");
-//			nowPage = Integer.parseInt(now);
-//			i++;
-//			}
-//		}
-//	}
+	@Test
+	public void searchByTitle() throws InterruptedException {
+		webtest.selectByVisibleText("xpath=//select[@name='stype']","-栏目-");
+		webtest.type("xpath=//*[@id=\"fmid\"]/table/tbody/tr/td/input[1]", "效果图");
+		webtest.click("xpath=//input[@value='搜索']");
+		String now = webtest.getValue("xpath=//*[@id=\"pg_pjump\"]");
+		int nowPage = Integer.parseInt(now);
+		String con = webtest.getText("xpath=/html/body/form[2]/div/table/tbody/tr[22]/td[2]/div[2]/ul/li[7]/a");
+		int count = Integer.parseInt(con);
+		int thcount = count/20+1;
+		List<WebElement> items = webtest.findElements("tag=tr");
+		for(int i=1;i<=count+thcount;i++) {
+			int t = i%21+1;
+			String xpath = "xpath=/html/body/form[2]/div/table/tbody/tr["+t+"]/td[2]/a";
+			assertEquals(webtest.getText(xpath), "效果图");
+			if(t==items.size()-2) {
+			webtest.click("xpath=//*[@id=\"fmlist\"]/div/table/tbody/tr[22]/td[2]/div[2]/ul/li[5]/a");
+			Thread.sleep(1000);
+			items = webtest.findElements("tag=tr");
+			now = webtest.getValue("xpath=//*[@id=\"pg_pjump\"]");
+			nowPage = Integer.parseInt(now);
+			i++;
+			}
+		}
+	}
 	
 	//No.3
 //	@Test
@@ -112,43 +112,43 @@ public class PhotoAlbumTest extends BaseTest{
 //	}
 	
 	//No.5
-//	@Test
-//	public void sortTest() throws InterruptedException {
-//		webtest.selectByVisibleText("xpath=//select[@name='stype']","-栏目-");
-//		webtest.typeAndClear("xpath=//*[@id=\\\"fmid\\\"]/table/tbody/tr/td/input[1]", "");
-//		webtest.selectByVisibleText("xpath=//*[@id=\"fmid\"]/table/tbody/tr/td/select[4]", "-显示-");
-//		webtest.selectByVisibleText("xpath=/html/body/form[1]/table/tbody/tr/td/select[5]", "添加时间");
-//		webtest.click("xpath=//input[@value='搜索']");
-//		Thread.sleep(2000);
-//		String now = webtest.getValue("xpath=//*[@id=\"pg_pjump\"]");
-//		int nowPage = Integer.parseInt(now);
-//		String con = webtest.getText("xpath=/html/body/form[2]/div/table/tbody/tr[22]/td[2]/div[2]/ul/li[7]/a");
-//		int count = Integer.parseInt(con);
-//		int thcount = count/20+1;
-//		List<WebElement> items = webtest.findElements("tag=tr");
-//		for(int i=2;i<=count+thcount;i++) {
-//			boolean flag;
-//			int t = i%21+1;
-//			String addtime = webtest.getText("xpath=/html/body/form[2]/div/table/tbody/tr["+t+"]/td[5]");
-//			String addtimeup = webtest.getText("xpath=/html/body/form[2]/div/table/tbody/tr["+i%21+"]/td[5]");
-//			if(addtime.compareTo(addtimeup)<=0) {
-//				flag = false;
-//			}
-//			else {
-//				flag = true;
-//			}
-//			assertEquals(flag, false);
-//			if(t==items.size()-2) {
-//			webtest.click("xpath=//*[@id=\"fmlist\"]/div/table/tbody/tr[22]/td[2]/div[2]/ul/li[5]/a");
-//			Thread.sleep(1000);
-//			items = webtest.findElements("tag=tr");
-//			now = webtest.getValue("xpath=//*[@id=\"pg_pjump\"]");
-//			nowPage = Integer.parseInt(now);
-//			i+=2;
-//			}
-//		}
-//		String addTime = webtest.getText("xpath=/html/body/form[2]/div/table/tbody/tr[2]/td[5]");
-//	}
+	@Test
+	public void sortTest() throws InterruptedException {
+		webtest.selectByVisibleText("xpath=//select[@name='stype']","-栏目-");
+		webtest.typeAndClear("xpath=//*[@id=\\\"fmid\\\"]/table/tbody/tr/td/input[1]", "");
+		webtest.selectByVisibleText("xpath=//*[@id=\"fmid\"]/table/tbody/tr/td/select[4]", "-显示-");
+		webtest.selectByVisibleText("xpath=/html/body/form[1]/table/tbody/tr/td/select[5]", "添加时间");
+		webtest.click("xpath=//input[@value='搜索']");
+		Thread.sleep(2000);
+		String now = webtest.getValue("xpath=//*[@id=\"pg_pjump\"]");
+		int nowPage = Integer.parseInt(now);
+		String con = webtest.getText("xpath=/html/body/form[2]/div/table/tbody/tr[22]/td[2]/div[2]/ul/li[7]/a");
+		int count = Integer.parseInt(con);
+		int thcount = count/20+1;
+		List<WebElement> items = webtest.findElements("tag=tr");
+		for(int i=2;i<=count+thcount;i++) {
+			boolean flag;
+			int t = i%21+1;
+			String addtime = webtest.getText("xpath=/html/body/form[2]/div/table/tbody/tr["+t+"]/td[5]");
+			String addtimeup = webtest.getText("xpath=/html/body/form[2]/div/table/tbody/tr["+i%21+"]/td[5]");
+			if(addtime.compareTo(addtimeup)<=0) {
+				flag = false;
+			}
+			else {
+				flag = true;
+			}
+			assertEquals(flag, false);
+			if(t==items.size()-2) {
+			webtest.click("xpath=//*[@id=\"fmlist\"]/div/table/tbody/tr[22]/td[2]/div[2]/ul/li[5]/a");
+			Thread.sleep(1000);
+			items = webtest.findElements("tag=tr");
+			now = webtest.getValue("xpath=//*[@id=\"pg_pjump\"]");
+			nowPage = Integer.parseInt(now);
+			i+=2;
+			}
+		}
+		String addTime = webtest.getText("xpath=/html/body/form[2]/div/table/tbody/tr[2]/td[5]");
+	}
 	
 	//No.6
 //	@Test

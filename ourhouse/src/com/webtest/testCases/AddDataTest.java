@@ -67,29 +67,30 @@ public class AddDataTest extends BaseTest{
 //		assertEquals(webtest.getValue("xpath=//*[@id=\"fm[color]\"]"), "FF9966");
 //	}
 	//No.18
-//	@Test
-//	public void uploadPhotoTest() throws InterruptedException, AWTException {
-//		webtest.click("xpath=//*[@id=\"fm_mpic_b\"]");
-//		StringSelection selection=new StringSelection("C:\\Users\\yu\\Pictures\\demo.jpg");
-//		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
-//		Robot robot=new Robot();
-//		Thread.sleep(1000);
-//		robot.keyPress(KeyEvent.VK_CONTROL);
-//		robot.keyPress(KeyEvent.VK_V);
-//	    //释放Ctrl+V
-//	    robot.keyRelease(KeyEvent.VK_CONTROL);
-//	    robot.keyRelease(KeyEvent.VK_V);
-//	    Thread.sleep(2000);
-//	    //点击回车
-//	    robot.keyPress(KeyEvent.VK_ENTER);
-//	    robot.keyRelease(KeyEvent.VK_ENTER);
-//	    
-//	    Thread.sleep(2000);
-//	    
-//	    String uri = webtest.getValue("xpath=//*[@id=\"fm_mpic_\"]");
-//	    
-//	    assertTrue(!uri.equals(""));
-//	}
+	@Test
+	public void uploadPhotoTest() throws InterruptedException, AWTException {
+		webtest.click("xpath=//*[@id=\"fm_mpic_b\"]");
+		StringSelection selection=new StringSelection("C:\\Users\\yu\\Pictures\\demo.jpg");
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
+		Robot robot=new Robot();
+		Thread.sleep(1000);
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_V);
+	    //释放Ctrl+V
+		
+	    robot.keyRelease(KeyEvent.VK_CONTROL);
+	    robot.keyRelease(KeyEvent.VK_V);
+	    Thread.sleep(2000);
+	    //点击回车
+	    robot.keyPress(KeyEvent.VK_ENTER);
+	    robot.keyRelease(KeyEvent.VK_ENTER);
+	    
+	    Thread.sleep(2000);
+	    
+	    String uri = webtest.getValue("xpath=//*[@id=\"fm_mpic_\"]");
+	    
+	    assertTrue(!uri.equals(""));
+	}
 	//No.19
 //	@Test
 //	public void clearUplodaText() throws InterruptedException {

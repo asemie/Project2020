@@ -77,28 +77,29 @@ public class BaseTest {
 		driver.manage().window().maximize();
 		Log.info(driverType);
 		webtest = new WebDriverEngine(driver);
-		webtest.open(ReadProperties.getPropertyValue("base_url1"));
-		webtest.type("id=fm[uname]",ReadProperties.getPropertyValue("usname"));
-		webtest.type("id=fm[upass]",ReadProperties.getPropertyValue("upasswd"));
-		webtest.type("xpath=//input[@placeholder='认证码']",ReadProperties.getPropertyValue("ucode"));
-		webtest.click("xpath=//input[@value='提交']");
-		
-		webtest.click("xpath=//*[@id=\"adf_nav1\"]/a[5]");
+		webtest.open(ReadProperties.getPropertyValue("base_url2"));
+		webtest.click("xpath=//*[@id=\"idf_rent\"]/a");
+//		webtest.type("id=fm[uname]",ReadProperties.getPropertyValue("usname"));
+//		webtest.type("id=fm[upass]",ReadProperties.getPropertyValue("upasswd"));
+//		webtest.type("xpath=//input[@placeholder='认证码']",ReadProperties.getPropertyValue("ucode"));
+//		webtest.click("xpath=//input[@value='提交']");
+//		
+//		webtest.click("xpath=//*[@id=\"adf_nav1\"]/a[5]");
 //		webtest.enterFrame("adf_main");
 		
-//		webtest.open("http://127.0.0.3/root/run/adm.php?dops-a&mod=album&part=house");
-//		webtest.open("http://127.0.0.3/root/run/adm.php?dops-a&mod=album&lpid=&part=house&view=form&stype=&recbk=ref");
+//		webtest.open("http://127.0.0.1/root/run/adm.php?dops-a&mod=album&part=house");
+//		webtest.open("http://127.0.0.1/root/run/adm.php?dops-a&mod=album&lpid=&part=house&view=form&stype=&recbk=ref");
 	}
 
 
-//	@AfterClass
-//	public void doAfterMethod() {
-//		if(this.driver != null){
-//			this.driver.quit();
-//			}
-//		Log.info("Quitted Browser");
-//	}
-//	
+	@AfterClass
+	public void doAfterMethod() {
+		if(this.driver != null){
+			this.driver.quit();
+			}
+		Log.info("Quitted Browser");
+	}
+	
 	public WebDriver getDriver() {
         return driver;
     }
